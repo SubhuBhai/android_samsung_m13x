@@ -22,7 +22,7 @@ ALLOW_MISSING_DEPENDENCIES := true
 
 # Bootloader
 BOARD_VENDOR := samsung
-TARGET_SOC := k69v1_64_titan
+TARGET_SOC := k6833v1_64_titan
 TARGET_BOOTLOADER_BOARD_NAME := mt6833
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -30,7 +30,7 @@ TARGET_USES_UEFI := true
 
 # Architecture
 TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv8l
+TARGET_ARCH_VARIANT := armeabi-v7a
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a76
