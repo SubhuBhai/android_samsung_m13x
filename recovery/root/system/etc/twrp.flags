@@ -1,15 +1,16 @@
 # mount point	fstype		device			device2				flags
 # Logical partitions
-system	/system		ext4								flags=display="System";first_stage_mount;logical;
-vendor	/vendor		ext4								flags=display="Vendor";first_stage_mount;logical;
-product	/product	ext4								flags=display="Product";first_stage_mount;logical;
-odm	/odm		ext4								flags=display="ODM";first_stage_mount;logical;
+system		  /system		    ext4	ro,barrier=1			wait,logical,first_stage_mount
+system_ext  /system_ext		ext4	ro,barrier=1			wait,logical,first_stage_mount
+vendor		  /vendor		    ext4	ro,barrier=1			wait,logical,first_stage_mount
+product		  /product	    ext4	ro,barrier=1			wait,logical,first_stage_mount
+odm		      /odm		      ext4	ro,barrier=1			wait,logical,first_stage_mount
 
 # Symlinked partitions
-/system_image	emmc		system							flags=backup=1;flashimg=1;display="System Image";
-/vendor_image	emmc		vendor							flags=backup=1;flashimg=1;display="Vendor Image";
-/product_image	emmc		product							flags=backup=1;flashimg=1;display="Product Image";
-/odm_image	emmc		odm							flags=backup=1;flashimg=1;display="ODM Image";
+/system_image	emmc		/dev/block/platform/bootdevice/by-name/system							flags=backup=1;flashimg=1;display="System Image";
+/vendor_image	emmc		/dev/block/platform/bootdevice/by-name/vendor							flags=backup=1;flashimg=1;display="Vendor Image";
+/product_image	emmc  /dev/block/platform/bootdevice/by-name/product						flags=backup=1;flashimg=1;display="Product Image";
+/odm_image	emmc		  /dev/block/platform/bootdevice/by-name/odm							  flags=backup=1;flashimg=1;display="ODM Image";
 
 # Physical partitions
 /metadata	ext4		/dev/block/platform/bootdevice/by-name/md_udc		flags=backup=1;display="Metadata";
