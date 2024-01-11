@@ -41,6 +41,9 @@ TARGET_CPU_SMP := true
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 
+# APEX
+DEXPREOPT_GENERATE_APEX_IMAGE := true
+
 # File systems
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
@@ -100,7 +103,6 @@ BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 5614396620
 BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product odm system_ext
 
 # System as root
-BOARD_ROOT_EXTRA_FOLDERS := cache carrier data_mirror efs keyrefuge linkerconfig metadata omr optics prism spu
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Workaround for error copying vendor files to recovery ramdisk
@@ -131,12 +133,9 @@ BOARD_USES_METADATA_PARTITION := true
 TW_DEVICE_VERSION := Smiley_9000
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
-TW_MAX_BRIGHTNESS := 306
-TW_DEFAULT_BRIGHTNESS := 200
-TW_Y_OFFSET := 50
-TW_H_OFFSET := -50
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+TW_Y_OFFSET := 75
+TW_H_OFFSET := -75
 TW_HAS_DOWNLOAD_MODE := true
 TW_INCLUDE_NTFS_3G := true
 TW_USE_NEW_MINADBD := true
@@ -150,3 +149,5 @@ TW_NO_SCREEN_BLANK := true
 TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+TW_FRAMERATE := 90
+TW_BACKUP_EXCLUSIONS := /data/fonts
